@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
-
+import Nav from "./components/Nav"
+import Home from "./components/Home"
 
 class App extends Component {
     render(){
         return (
-            <h1>Hello</h1>
+            <div>
+                <Nav />
+                <Home />
+            </div>
+            
         )
     }
 }
