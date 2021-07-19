@@ -1,4 +1,4 @@
-import React, { Component , Fragment, useState } from 'react'
+import React, { Component , Fragment } from 'react'
 import FieldForm from "./FieldForm"
 
 export default class Panel extends Component {
@@ -95,16 +95,16 @@ export default class Panel extends Component {
     deleteData(id){
         if(confirm("¿Está seguro de eliminar el registro?")){
             this.setState({loading:true})
-        fetch("/api/delete/"+id,{
-            method:"DELETE",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            }
-        }).then(res=>{
-            this.getBalance()
-            this.getData()
-        })
+            fetch("/api/delete/"+id,{
+                method:"DELETE",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            }).then(res=>{
+                this.getBalance()
+                this.getData()
+            })
         }
     }
 
